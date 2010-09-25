@@ -1,8 +1,8 @@
 Summary:	ID3 Tagger
 Name:		kid3
-Version: 	1.4
+Version: 	1.5
 Release: 	%mkrel 1
-Source0: 	http://prdownloads.sourceforge.net/kid3/%name-%version.tar.gz
+Source0: 	http://downloads.sourceforge.net/kid3/%name-%version.tar.gz
 License: 	GPLv2+
 Group: 		Sound
 Url: 		http://kid3.sourceforge.net/
