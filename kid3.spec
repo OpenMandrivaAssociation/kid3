@@ -88,7 +88,7 @@ install -pm 644 AUTHORS ChangeLog COPYING LICENSE README \
     %{buildroot}%{_docdir}/%{name}-qt-%{version}
 
 # This only finds the files for the KDE version
-%find_lang %{name} --with-kde --with-html
+%find_lang %{name} --with-kde
 grep -F kid3 %{name}.lang > %{name}-kde.lang
 
 %clean
