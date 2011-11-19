@@ -20,6 +20,7 @@ BuildRequires:	taglib-devel >= 1.4
 BuildRequires:	libmp4v2-devel
 BuildRequires:	libtunepimp-devel
 BuildRequires:	libflac++-devel
+BuildRequires:	automoc4
 Requires:	xdg-utils
 
 %description
