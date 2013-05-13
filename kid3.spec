@@ -14,15 +14,15 @@ BuildRequires:	kdelibs4-devel
 BuildRequires:	qt4-devel
 BuildRequires:	chromaprint-devel
 BuildRequires:	docbook-style-xsl
-BuildRequires:	libogg-devel
-BuildRequires:	libvorbis-devel
+BuildRequires:	pkgconfig(ogg)
+BuildRequires:	pkgconfig(vorbis)
 BuildRequires:	id3lib-devel
 BuildRequires:	taglib-devel >= 1.4
 BuildRequires:	libmp4v2-devel
 BuildRequires:	libtunepimp-devel
 BuildRequires:	libflac++-devel
 %if %{use_gstreamer}
-BuildRequires:	libgstreamer-devel >= 0.10
+BuildRequires:	pkgconfig(gstreamer-1.0) >= 0.10
 %else
 BuildRequires:	ffmpeg-devel
 %endif
