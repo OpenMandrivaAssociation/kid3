@@ -12,6 +12,7 @@ BuildRequires:	cmake >= 2.8
 BuildRequires:	gettext
 BuildRequires:	kdelibs4-devel
 BuildRequires:	qt4-devel
+BuildRequires:  kde4-macros
 BuildRequires:	chromaprint-devel
 BuildRequires:	docbook-style-xsl
 BuildRequires:	pkgconfig(ogg)
