@@ -3,7 +3,7 @@
 Summary:	ID3 Tagger
 Name:		kid3
 Version:	3.0.2
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Sound
 Url:		http://kid3.sourceforge.net/
@@ -22,6 +22,7 @@ BuildRequires:	taglib-devel >= 1.4
 BuildRequires:	libmp4v2-devel
 BuildRequires:	libtunepimp-devel
 BuildRequires:	pkgconfig(flac++)
+BuildRequires:	readline-devel
 %if %{use_gstreamer}
 BuildRequires:	pkgconfig(gstreamer-1.0) >= 0.10
 %else
