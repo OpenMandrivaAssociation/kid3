@@ -22,6 +22,7 @@ BuildRequires:	taglib-devel >= 1.4
 BuildRequires:	libmp4v2-devel
 BuildRequires:	libtunepimp-devel
 BuildRequires:	pkgconfig(flac++)
+BuildRequires:	readline-devel
 %if %{use_gstreamer}
 BuildRequires:	pkgconfig(gstreamer-1.0) >= 0.10
 %else
