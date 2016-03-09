@@ -2,8 +2,8 @@
 
 Summary:	ID3 Tagger
 Name:		kid3
-Version:	3.0.2
-Release:	3
+Version:	3.3.1
+Release:	1
 License:	GPLv2+
 Group:		Sound
 Url:		http://kid3.sourceforge.net/
@@ -87,6 +87,7 @@ looking for. This package provides Kid3 built without GUI dependencies.
 		-DWITH_ID3LIB=ON -DWITH_VORBIS=ON \
 		-DWITH_FLAC=ON -DWITH_CHROMAPRINT=ON \
 		-DWITH_APPS="Qt;CLI;KDE" \
+		-DWITH_QT5=ON \
 %if %{use_gstreamer}
 		-DWITH_GSTREAMER=ON -DWITH_FFMPEG=OFF \
 %else
@@ -105,13 +106,13 @@ looking for. This package provides Kid3 built without GUI dependencies.
 %doc AUTHORS ChangeLog COPYING LICENSE README
 %{_docdir}/HTML/*/%{name}/*
 %{_kde_bindir}/%{name}
-%{_kde_applicationsdir}/%{name}.desktop
-%{_kde_appsdir}/%{name}/*
+%{_datadir}/applications/%{name}.desktop
 %{_kde_iconsdir}/hicolor/*/apps/%{name}.png
 %{_kde_iconsdir}/hicolor/scalable/apps/%{name}.svgz
 %{_datadir}/dbus-1/interfaces/*.xml
 %{_mandir}/man1/%{name}.1*
 %lang(de) %{_mandir}/de/man1/%{name}.1*
+%{_datadir}/appdata/kid3.appdata.xml
 
 #--------------------------------------------------------------------
 
@@ -128,6 +129,8 @@ looking for. This package provides Kid3 built without GUI dependencies.
 %{_mandir}/man1/%{name}-qt.1*
 %lang(de) %{_mandir}/de/man1/%{name}-qt.1*
 %{_docdir}/%{name}-qt
+%{_datadir}/kxmlgui5/kid3/kid3ui.rc
+%{_datadir}/appdata/kid3-qt.appdata.xm
 
 %files cli
 %{_bindir}/kid3-cli
