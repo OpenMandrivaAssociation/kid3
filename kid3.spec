@@ -83,7 +83,7 @@ looking for. This package provides Kid3 built without GUI dependencies.
 
 
 %build
-%cmake_kde4	-DBUILD_SHARED_LIBS:BOOL=OFF \
+%cmake_kde5	-DBUILD_SHARED_LIBS:BOOL=OFF \
 		-DWITH_TAGLIB=ON -DWITH_MP4V2=ON \
 		-DWITH_ID3LIB=ON -DWITH_VORBIS=ON \
 		-DWITH_FLAC=ON -DWITH_CHROMAPRINT=ON \
@@ -95,11 +95,11 @@ looking for. This package provides Kid3 built without GUI dependencies.
 		-DWITH_GSTREAMER=OFF -DWITH_FFMPEG=ON \
 %endif
 		-DWITH_PHONON=ON
-%make
+%ninja
 
 
 %install
-%makeinstall_std -C build
+%ninja_install -C build
 
 #--------------------------------------------------------------------
 
@@ -114,6 +114,7 @@ looking for. This package provides Kid3 built without GUI dependencies.
 %{_mandir}/man1/%{name}.1*
 %lang(de) %{_mandir}/de/man1/%{name}.1*
 %{_datadir}/appdata/kid3.appdata.xml
+%{_datadir}/kxmlgui5/kid3/kid3ui.rc
 
 #--------------------------------------------------------------------
 
@@ -130,8 +131,7 @@ looking for. This package provides Kid3 built without GUI dependencies.
 %{_mandir}/man1/%{name}-qt.1*
 %lang(de) %{_mandir}/de/man1/%{name}-qt.1*
 %{_docdir}/%{name}-qt
-%{_datadir}/kxmlgui5/kid3/kid3ui.rc
-%{_datadir}/appdata/kid3-qt.appdata.xm
+%{_datadir}/appdata/kid3-qt.appdata.xml
 
 %files cli
 %{_bindir}/kid3-cli
