@@ -109,10 +109,10 @@ looking for. This package provides Kid3 built without GUI dependencies.
 %files
 %doc AUTHORS ChangeLog COPYING LICENSE README
 %{_docdir}/HTML/*/%{name}/*
-%{_kde_bindir}/%{name}
+%{_kde5_bindir}/%{name}
 %{_datadir}/applications/%{name}.desktop
-%{_kde_iconsdir}/hicolor/*/apps/%{name}.png
-%{_kde_iconsdir}/hicolor/scalable/apps/%{name}.svgz
+%{_kde5_iconsdir}/hicolor/*/apps/%{name}.png
+%{_kde5_iconsdir}/hicolor/scalable/apps/%{name}.svgz
 %{_datadir}/dbus-1/interfaces/*.xml
 %{_mandir}/man1/%{name}.1*
 %lang(de) %{_mandir}/de/man1/%{name}.1*
