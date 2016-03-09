@@ -10,10 +10,10 @@ Url:		http://kid3.sourceforge.net/
 Source0:	http://prdownloads.sourceforge.net/kid3/%{name}-%{version}.tar.gz
 BuildRequires:	cmake >= 2.8
 BuildRequires:	cmake(ECM)
+BuildRequires:	cmake(KF5KIO)
+BuildRequires:	cmake(KF5DocTools)
 BuildRequires:	gettext
-BuildRequires:	kdelibs4-devel
 BuildRequires:	qt5-devel
-BuildRequires:  kde4-macros
 BuildRequires:	chromaprint-devel
 BuildRequires:	docbook-style-xsl
 BuildRequires:	pkgconfig(ogg)
