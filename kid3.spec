@@ -12,6 +12,8 @@ BuildRequires:	cmake >= 2.8
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF5KIO)
 BuildRequires:	cmake(KF5DocTools)
+BuildRequires:	cmake(Qt5Test)
+BuildRequires:	cmake(Qt5Multimedia)
 BuildRequires:	gettext
 BuildRequires:	qt5-devel
 BuildRequires:	chromaprint-devel
@@ -24,6 +26,7 @@ BuildRequires:	libmp4v2-devel
 BuildRequires:	libtunepimp-devel
 BuildRequires:	pkgconfig(flac++)
 BuildRequires:	readline-devel
+BuildRequires:	xsltproc
 %if %{use_gstreamer}
 BuildRequires:	pkgconfig(gstreamer-1.0) >= 0.10
 %else
