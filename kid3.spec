@@ -9,6 +9,7 @@ Group:		Sound
 Url:		http://kid3.sourceforge.net/
 Source0:	http://prdownloads.sourceforge.net/kid3/%{name}-%{version}.tar.gz
 BuildRequires:	cmake >= 2.8
+BuildRequires:	cmake(ECM)
 BuildRequires:	gettext
 BuildRequires:	kdelibs4-devel
 BuildRequires:	qt5-devel
