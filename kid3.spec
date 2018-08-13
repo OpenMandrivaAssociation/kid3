@@ -2,8 +2,8 @@
 
 Summary:	ID3 Tagger
 Name:		kid3
-Version:	3.3.1
-Release:	2
+Version:	3.6.1
+Release:	1
 License:	GPLv2+
 Group:		Sound
 Url:		http://kid3.sourceforge.net/
@@ -22,7 +22,6 @@ BuildRequires:	pkgconfig(ogg)
 BuildRequires:	pkgconfig(vorbis)
 BuildRequires:	id3lib-devel
 BuildRequires:	taglib-devel >= 1.4
-BuildRequires:	libmp4v2-devel
 BuildRequires:	libtunepimp-devel
 BuildRequires:	pkgconfig(flac++)
 BuildRequires:	readline-devel
@@ -87,7 +86,7 @@ looking for. This package provides Kid3 built without GUI dependencies.
 
 %build
 %cmake_kde5	-DBUILD_SHARED_LIBS:BOOL=OFF \
-		-DWITH_TAGLIB=ON -DWITH_MP4V2=ON \
+		-DWITH_TAGLIB=ON \
 		-DWITH_ID3LIB=ON -DWITH_VORBIS=ON \
 		-DWITH_FLAC=ON -DWITH_CHROMAPRINT=ON \
 		-DWITH_APPS="Qt;CLI;KDE" \
