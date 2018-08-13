@@ -20,12 +20,13 @@ BuildRequires:	chromaprint-devel
 BuildRequires:	docbook-style-xsl
 BuildRequires:	pkgconfig(ogg)
 BuildRequires:	pkgconfig(vorbis)
+BuildRequires:	pkgconfig(zlib)
 BuildRequires:	id3lib-devel
 BuildRequires:	taglib-devel >= 1.4
-BuildRequires:	libtunepimp-devel
 BuildRequires:	pkgconfig(flac++)
 BuildRequires:	readline-devel
 BuildRequires:	xsltproc
+BuildRequires:	python2
 %if %{use_gstreamer}
 BuildRequires:	pkgconfig(gstreamer-1.0) >= 0.10
 %else
@@ -91,6 +92,7 @@ looking for. This package provides Kid3 built without GUI dependencies.
 		-DWITH_FLAC=ON -DWITH_CHROMAPRINT=ON \
 		-DWITH_APPS="Qt;CLI;KDE" \
 		-DWITH_QT5=ON \
+		-DPYTHON_EXECUTABLE=%__python2 \
 %if %{use_gstreamer}
 		-DWITH_GSTREAMER=ON -DWITH_FFMPEG=OFF \
 %else
@@ -115,7 +117,7 @@ looking for. This package provides Kid3 built without GUI dependencies.
 %{_datadir}/dbus-1/interfaces/*.xml
 %{_mandir}/man1/%{name}.1*
 %lang(de) %{_mandir}/de/man1/%{name}.1*
-%{_datadir}/appdata/kid3.appdata.xml
+%{_datadir}/metainfo/kid3.appdata.xml
 %{_datadir}/kxmlgui5/kid3/kid3ui.rc
 
 #--------------------------------------------------------------------
@@ -133,7 +135,7 @@ looking for. This package provides Kid3 built without GUI dependencies.
 %{_mandir}/man1/%{name}-qt.1*
 %lang(de) %{_mandir}/de/man1/%{name}-qt.1*
 %{_docdir}/%{name}-qt
-%{_datadir}/appdata/kid3-qt.appdata.xml
+%{_datadir}/metainfo/kid3-qt.appdata.xml
 
 %files cli
 %{_bindir}/kid3-cli
