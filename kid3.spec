@@ -86,6 +86,8 @@ looking for. This package provides Kid3 built without GUI dependencies.
 
 
 %build
+mkdir kid3-build
+cd kid3-build; \
 %cmake_kde5	-DBUILD_SHARED_LIBS:BOOL=OFF \
 		-DWITH_TAGLIB=ON \
 		-DWITH_ID3LIB=ON -DWITH_VORBIS=ON \
