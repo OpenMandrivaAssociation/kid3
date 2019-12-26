@@ -2,7 +2,7 @@
 
 Summary:	ID3 Tagger
 Name:		kid3
-Version:	3.6.1
+Version:	3.8.1
 Release:	1
 License:	GPLv2+
 Group:		Sound
@@ -26,7 +26,7 @@ BuildRequires:	taglib-devel >= 1.4
 BuildRequires:	pkgconfig(flac++)
 BuildRequires:	readline-devel
 BuildRequires:	xsltproc
-BuildRequires:	python2
+#BuildRequires:	python2
 %if %{use_gstreamer}
 BuildRequires:	pkgconfig(gstreamer-1.0) >= 0.10
 %else
@@ -92,13 +92,11 @@ looking for. This package provides Kid3 built without GUI dependencies.
 		-DWITH_FLAC=ON -DWITH_CHROMAPRINT=ON \
 		-DWITH_APPS="Qt;CLI;KDE" \
 		-DWITH_QT5=ON \
-		-DPYTHON_EXECUTABLE=%__python2 \
 %if %{use_gstreamer}
 		-DWITH_GSTREAMER=ON -DWITH_FFMPEG=OFF \
 %else
 		-DWITH_GSTREAMER=OFF -DWITH_FFMPEG=ON \
 %endif
-		-DWITH_PHONON=ON
 %ninja
 
 
