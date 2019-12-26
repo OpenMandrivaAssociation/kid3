@@ -82,6 +82,7 @@ looking for. This package provides Kid3 built without GUI dependencies.
 #--------------------------------------------------------------------
 
 %prep
+[ ${RPM_BUILD_ROOT} != "/" ] && rm -rf ${RPM_BUILD_ROOT}
 %setup -q
 
 
