@@ -1,5 +1,2 @@
-removed_sources:
-  kid3-3.0.2.tar.gz: cc6387a18e304fa7b7bcc377e7408ce07bccea01
-  kid3-3.3.1.tar.gz: 9d69c372b2416f721aed089481d97ab688298f00
 sources:
-  kid3-3.6.1.tar.gz: 11ff5d066de5944936c7b4a1c0c1f03b81992852
+  kid3-3.8.3.tar.gz: 8601439ead50942b9a3fe182c0c060ca6c257ff9
