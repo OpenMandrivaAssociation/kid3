@@ -87,18 +87,18 @@ looking for. This package provides Kid3 built without GUI dependencies.
 %build
 %cmake_kde5	-DBUILD_SHARED_LIBS:BOOL=OFF \
 		-DWITH_TAGLIB=ON \
-		-DWITH_ID3LIB=ON 
+		-DWITH_ID3LIB=ON \
 		-DWITH_VORBIS=ON \
-		-DWITH_FLAC=ON 
+		-DWITH_FLAC=ON \
 		-DWITH_CHROMAPRINT=ON \
 		-DWITH_APPS="Qt;CLI;KDE" \
 		-DWITH_QT5=ON \
 		-DPYTHON_EXECUTABLE=%__python \
 %if %{use_gstreamer}
-		-DWITH_GSTREAMER=ON 
+		-DWITH_GSTREAMER=ON \
 		-DWITH_FFMPEG=OFF \
 %else
-		-DWITH_GSTREAMER=OFF 
+		-DWITH_GSTREAMER=OFF \
 		-DWITH_FFMPEG=ON \
 %endif
 		-DWITH_PHONON=ON
