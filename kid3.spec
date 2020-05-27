@@ -2,11 +2,11 @@
 
 Summary:	ID3 Tagger
 Name:		kid3
-Version:	3.6.1
+Version:	3.8.3
 Release:	1
 License:	GPLv2+
 Group:		Sound
-Url:		http://kid3.sourceforge.net/
+Url:		https://kid3.kde.org
 Source0:	http://prdownloads.sourceforge.net/kid3/%{name}-%{version}.tar.gz
 BuildRequires:	cmake >= 2.8
 BuildRequires:	cmake(ECM)
@@ -26,7 +26,7 @@ BuildRequires:	taglib-devel >= 1.4
 BuildRequires:	pkgconfig(flac++)
 BuildRequires:	readline-devel
 BuildRequires:	xsltproc
-BuildRequires:	python2
+BuildRequires:	python
 %if %{use_gstreamer}
 BuildRequires:	pkgconfig(gstreamer-1.0) >= 0.10
 %else
@@ -82,21 +82,24 @@ looking for. This package provides Kid3 built without GUI dependencies.
 #--------------------------------------------------------------------
 
 %prep
-%setup -q
-
+%autosetup -p1
 
 %build
 %cmake_kde5	-DBUILD_SHARED_LIBS:BOOL=OFF \
 		-DWITH_TAGLIB=ON \
-		-DWITH_ID3LIB=ON -DWITH_VORBIS=ON \
-		-DWITH_FLAC=ON -DWITH_CHROMAPRINT=ON \
+		-DWITH_ID3LIB=ON 
+		-DWITH_VORBIS=ON \
+		-DWITH_FLAC=ON 
+		-DWITH_CHROMAPRINT=ON \
 		-DWITH_APPS="Qt;CLI;KDE" \
 		-DWITH_QT5=ON \
-		-DPYTHON_EXECUTABLE=%__python2 \
+		-DPYTHON_EXECUTABLE=%__python \
 %if %{use_gstreamer}
-		-DWITH_GSTREAMER=ON -DWITH_FFMPEG=OFF \
+		-DWITH_GSTREAMER=ON 
+		-DWITH_FFMPEG=OFF \
 %else
-		-DWITH_GSTREAMER=OFF -DWITH_FFMPEG=ON \
+		-DWITH_GSTREAMER=OFF 
+		-DWITH_FFMPEG=ON \
 %endif
 		-DWITH_PHONON=ON
 %ninja
