@@ -109,39 +109,40 @@ looking for. This package provides Kid3 built without GUI dependencies.
 %install
 %ninja_install -C build
 
+%find_lang kid3 --with-man
+%find_lang kid3-qt --with-man
+%find_lang kid3-cli --with-man
+
 #--------------------------------------------------------------------
 
-%files
+%files -f kid3.lang
 %doc AUTHORS ChangeLog COPYING LICENSE README
 %{_docdir}/HTML/*/%{name}/*
 %{_kde5_bindir}/%{name}
-%{_datadir}/applications/%{name}.desktop
+%{_datadir}/applications/org.kde.kid3.desktop
 %{_kde5_iconsdir}/hicolor/*/apps/%{name}.png
 %{_kde5_iconsdir}/hicolor/scalable/apps/%{name}.svgz
 %{_datadir}/dbus-1/interfaces/*.xml
-%{_mandir}/man1/%{name}.1*
-%lang(de) %{_mandir}/de/man1/%{name}.1*
-%{_datadir}/metainfo/kid3.appdata.xml
+%{_datadir}/metainfo/org.kde.kid3.appdata.xml
 %{_datadir}/kxmlgui5/kid3/kid3ui.rc
+%{_mandir}/man1/kid3.1*
 
 #--------------------------------------------------------------------
 
-%files qt
+%files qt -f kid3-qt.lang
 %dir %{_datadir}/%{name}/
 %dir %{_datadir}/%{name}/translations/
 %{_bindir}/%{name}-qt
-%{_datadir}/applications/%{name}-qt.desktop
+%{_datadir}/applications/org.kde.kid3-qt.desktop
 %{_datadir}/icons/hicolor/*/apps/%{name}-qt.png
 %{_datadir}/icons/hicolor/scalable/apps/%{name}-qt.svg
 # This is not needed for qt
 #{_datadir}/dbus-1/interfaces/*.xml
 %{_datadir}/%{name}/translations/*.qm
-%{_mandir}/man1/%{name}-qt.1*
-%lang(de) %{_mandir}/de/man1/%{name}-qt.1*
 %{_docdir}/%{name}-qt
-%{_datadir}/metainfo/kid3-qt.appdata.xml
+%{_datadir}/metainfo/org.kde.kid3-qt.appdata.xml
+%{_mandir}/man1/kid3-qt.1*
 
-%files cli
+%files cli -f kid3-cli.lang
 %{_bindir}/kid3-cli
 %{_mandir}/man1/kid3-cli.1*
-%lang(de) %{_mandir}/de/man1/kid3-cli.1*
