@@ -2,12 +2,13 @@
 
 Summary:	ID3 Tagger
 Name:		kid3
-Version:	3.8.4
+Version:	3.9.1
 Release:	1
 License:	GPLv2+
 Group:		Sound
 Url:		https://kid3.kde.org
 Source0:	http://prdownloads.sourceforge.net/kid3/%{name}-%{version}.tar.gz
+Patch0:		kid3-3.9.1-compile.patch
 BuildRequires:	cmake >= 2.8
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF5KIO)
