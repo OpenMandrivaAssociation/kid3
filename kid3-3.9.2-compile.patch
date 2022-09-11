@@ -1,0 +1,11 @@
+diff -up kid3-3.9.2/src/core/model/coretaggedfileiconprovider.h.omv~ kid3-3.9.2/src/core/model/coretaggedfileiconprovider.h
+--- kid3-3.9.2/src/core/model/coretaggedfileiconprovider.h.omv~	2022-09-12 00:35:01.200668875 +0200
++++ kid3-3.9.2/src/core/model/coretaggedfileiconprovider.h	2022-09-12 00:35:10.668725529 +0200
+@@ -29,6 +29,7 @@
+ #include "kid3api.h"
+ 
+ class QVariant;
++class QByteArray;
+ class QSize;
+ class TaggedFile;
+ 
