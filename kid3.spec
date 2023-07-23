@@ -3,7 +3,7 @@
 Summary:	ID3 Tagger
 Name:		kid3
 Version:	3.9.4
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Sound
 Url:		https://kid3.kde.org
