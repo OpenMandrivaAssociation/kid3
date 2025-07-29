@@ -12,6 +12,7 @@ Patch0:		kid3-3.9.2-compile.patch
 BuildRequires:	cmake >= 3.16
 BuildRequires:	docbook-style-xsl
 BuildRequires:	gettext
+BuildRequires:	ninja
 BuildRequires:	python
 BuildRequires:	xsltproc
 BuildRequires:	cmake(ECM)
@@ -152,7 +153,7 @@ This package provides Kid3 built without GUI dependencies.
 		-DWITH_FFMPEG=ON \
 %endif
 		-DPYTHON_EXECUTABLE=%{__python} \
-		-G ninja
+		-G Ninja
 
 %ninja_build
 
