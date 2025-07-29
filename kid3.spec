@@ -151,7 +151,8 @@ This package provides Kid3 built without GUI dependencies.
 		-DWITH_GSTREAMER=OFF \
 		-DWITH_FFMPEG=ON \
 %endif
-		-DPYTHON_EXECUTABLE=%{__python}
+		-DPYTHON_EXECUTABLE=%{__python} \
+		-G ninja
 
 %ninja_build
 
