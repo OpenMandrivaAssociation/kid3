@@ -1,17 +1,18 @@
-%define	use_gstreamer	0
+%define		use_gstreamer	0
 
 Summary:	ID3 Tagger
 Name:		kid3
-Version:	3.9.7
-Release:	3
-License:	GPLv2+
-Group:		Sound
+Version:		3.10.1
+Release:		1
+License:		GPLv2+
+Group:	Sound
 Url:		https://kid3.kde.org
-Source0:	http://prdownloads.sourceforge.net/kid3/%{name}-%{version}.tar.gz
+Source0:	https://prdownloads.sourceforge.net/kid3/%{name}-%{version}.tar.gz
 Patch0:		kid3-3.9.2-compile.patch
 BuildRequires:	cmake >= 3.16
 BuildRequires:	docbook-style-xsl
 BuildRequires:	gettext
+BuildRequires:	gzip-utils
 BuildRequires:	ninja
 BuildRequires:	python
 BuildRequires:	xsltproc
@@ -74,13 +75,13 @@ With Kid3 you can:
 %files -f %{name}.lang
 %doc AUTHORS ChangeLog COPYING LICENSE README
 %{_docdir}/HTML/*/%{name}/*
-%{_kde5_bindir}/%{name}
+%{_bindir}/%{name}
 %{_datadir}/applications/org.kde.%{name}.desktop
-%{_kde5_iconsdir}/hicolor/*/apps/%{name}.png
-%{_kde5_iconsdir}/hicolor/scalable/apps/%{name}.svgz
-%{_datadir}/dbus-1/interfaces/*.xml
+%{_datadir}/dbus-1/interfaces/org.kde.Kid3.xml
 %{_datadir}/metainfo/org.kde.%{name}.appdata.xml
 %{_datadir}/kxmlgui5/%{name}/kid3ui.rc
+%{_iconsdir}/hicolor/*/apps/%{name}.png
+%{_iconsdir}/hicolor/scalable/apps/%{name}.svg
 %{_mandir}/man1/%{name}.1*
 
 #--------------------------------------------------------------------
@@ -102,14 +103,12 @@ This package provides Kid3 built without KDE dependencies.
 %dir %{_datadir}/%{name}/
 %dir %{_datadir}/%{name}/translations/
 %{_bindir}/%{name}-qt
-%{_datadir}/applications/org.kde.%{name}-qt.desktop
-%{_datadir}/icons/hicolor/*/apps/%{name}-qt.png
-%{_datadir}/icons/hicolor/scalable/apps/%{name}-qt.svg
-# This is not needed for qt
-#{_datadir}/dbus-1/interfaces/*.xml
 %{_datadir}/%{name}/translations/*.qm
 %{_docdir}/%{name}-qt
 %{_datadir}/metainfo/org.kde.%{name}-qt.appdata.xml
+%{_datadir}/applications/org.kde.%{name}-qt.desktop
+%{_iconsdir}/hicolor/*/apps/%{name}-qt.png
+%{_iconsdir}/hicolor/scalable/apps/%{name}-qt.svg
 %{_mandir}/man1/%{name}-qt.1*
 
 #--------------------------------------------------------------------
@@ -134,6 +133,9 @@ This package provides Kid3 built without GUI dependencies.
 
 %prep
 %autosetup -p1
+
+# Fix FSF address
+sed -i 's/51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA/31 Milk Street, # 960789, Boston, MA 02196, USA/g' COPYING
 
 
 %build
@@ -160,6 +162,12 @@ This package provides Kid3 built without GUI dependencies.
 
 %install
 %ninja_install -C build
+
+# Fix gzipped-svg-icon
+(
+cd %{buildroot}%{_iconsdir}/hicolor/scalable/apps/
+zcat %{name}.svgz > %{name}.svg && rm -f %{name}.svgz
+)
 
 %find_lang kid3 --with-man
 %find_lang kid3-qt --with-man
